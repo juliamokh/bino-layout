@@ -1,0 +1,482 @@
+@import 'reset';
+@import 'colors';
+@import 'grid';
+
+
+// base rules
+
+* 
+  box-sizing: border-box
+  
+  &::after,
+  &::before
+    box-sizing: border-box
+
+
+html, 
+body 
+  overflow-x: hidden
+  font-family: 'Open Sans', Arial, Helvetica, sans-serif
+  font-size: 14px
+  color: $lightest-grey
+
+
+a
+  color: inherit
+  text-decoration: none
+  align-self: center
+
+
+// buttons
+
+.btn
+  min-width: 142px
+  padding: 15px
+  font-family: 'Open Sans', Arial, Helvetica, sans-serif
+  font-size: 1rem
+  font-weight: 700
+  text-transform: uppercase
+  color: $white
+  border-radius: 0.1rem
+  box-shadow: 0px 0px 4px rgba(0,0,0, .4)
+
+  &--accent
+    background: $accent
+    border: 1px solid $accent
+
+  &--transparent
+    background: transparent
+
+  &--grey 
+    background: $light-grey
+    border: 1px solid $light-grey
+
+// header
+
+.page-header
+  padding-bottom: 40px
+  background: url('../img/header.png') center center no-repeat
+  clip-path: polygon(100% 0, 100% 97%, 50% 100%, 0 97%, 0 0)
+
+  @media (min-width: 1000px)
+    clip-path: polygon(100% 0, 100% 90%, 50% 100%, 0 90%, 0 0)
+
+
+.header-top
+  display: flex
+  justify-content: space-between
+  padding: 40px 0
+
+
+.logo
+  height: fit-content
+  font-size: 2.5rem
+  border: 2px solid $lightest-grey
+  
+  &__left
+    display: inline-block
+    padding: 5px 12px
+    font-weight: 700
+    color: $dark-grey
+    background: $lightest-grey
+  
+  &__right
+    display: inline-block
+    padding: 5px 10px 5px 0
+    font-weight: 300
+
+
+.nav-bar-container
+  .nav-bar
+    display: flex
+    flex-direction: column
+
+    &__item
+      display: flex
+      margin-left: 30px
+      text-transform: uppercase
+
+      &--selected
+        color: $accent
+        border-bottom: 1px solid $accent
+  
+  @media (max-width: 1000px)
+    position: relative
+    top: 0
+    left: 0
+    z-index: 1
+    user-select: none
+  
+    .hamburger-icon
+      position: relative
+      z-index: 1
+      font-size: 3rem
+      transform: rotate(90deg) translate(-2px, -1px)
+      transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0)
+
+    .nav-bar
+      position: absolute
+      width: 340px
+      top: -10px
+      left: 140px
+      background: $darker-grey
+      border-radius: 5px
+      transform-origin: 0% 0%
+      transform: translate(-100%, 0)
+      transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0)
+
+      &__item
+        padding: 20px 0
+
+    input
+      display: block
+      width: 40px
+      height: 40px
+      position: absolute
+      cursor: pointer
+      opacity: 0
+      z-index: 2
+
+      &:checked 
+        ~ ul,
+        ~ .hamburger-icon
+          transform: none
+
+  @media (min-width: 1000px)
+    .hamburger-icon,
+    input
+      display: none
+
+    .nav-bar
+      flex-direction: row
+      height: 100%
+
+      @media (min-width: 1200px)
+        &__item
+          margin-left: 55px
+
+
+.header-main
+  text-align: center
+  padding-bottom: 5vh
+
+  &__slogan
+    font-family: 'Source Sans Pro', Arial, Helvetica, sans-serif
+    font-size: 1.4rem
+    letter-spacing: 0.1rem
+
+  &__title
+    margin: 35px 0
+    font-size: 2rem
+    font-weight: 700
+    text-transform: uppercase
+    letter-spacing: 0.6rem
+
+  &__text
+    max-width: 600px
+    margin: 35px auto
+    line-height: 1.7rem
+    color: $beige
+
+  .separator
+    background: url('../img/separator-light.png') center center no-repeat
+
+  .btn
+    width: 220px
+    margin: 10px 15px
+    
+  @media (min-width: 1000px)
+    padding: 24vh 0
+
+    &__slogan
+      font-size: 1.7rem
+
+    &__title
+      font-size: 5rem
+
+    .btn
+      margin: 30px 15px
+
+
+.anchor
+  position: relative
+  z-index: 1
+  width: fit-content
+  margin:
+    top: -35px
+    left: auto
+    right: auto
+  padding: 20px
+  font-size: 1.5rem
+  color: $accent
+  background-color: $lightest-grey
+  border-radius: 50%
+  box-shadow: 0px 0px 0px 5px rgba(255,255,255,.2)
+
+
+// who we are
+
+.who-we-are
+  > .row
+    display: flex
+    flex-flow: row wrap
+    justify-content: space-around
+    padding: 20px 0
+  
+    @media (min-width: 1000px)
+      justify-content: space-between
+      padding: 100px 0
+
+
+.feature
+  display: flex
+  flex-direction: column
+  justify-content: space-between
+  align-items: center
+  max-width: 250px
+  padding: 40px 0
+
+  &__icon
+    display: flex
+    justify-content: center
+    align-items: center
+    width: 70px
+    height: 70px
+    font-size: 1.5rem
+    color: $accent
+    border: 1px solid $light-grey
+    border-radius: 3px
+
+  &__title
+    margin-top: 30px
+    font-size: 1.4rem
+    letter-spacing: 0.1rem
+    font-weight: 600
+    text-transform: uppercase
+    color: $grey
+
+  &__separator
+    width: 40px
+    margin: 15px 0
+
+  &__text
+    line-height: 1.5rem
+    text-align: center
+    font-size: .9rem
+    font-family: 'Source Sans Pro', Arial, Helvetica, sans-serif
+    font-weight: 300
+    color: $grey
+
+  &--selected
+    .feature
+      &__icon
+        border: 1px solid $accent
+        transform: rotate(45deg)
+
+        img 
+          transform: rotate(-45deg)
+
+      &__title
+        color: $accent
+
+  @media (min-width: 1000px)
+    padding: 0
+
+
+// about us
+
+.about-us
+  padding: 80px 0
+  background: $lightest-grey
+
+  .row 
+    display: flex
+    flex-direction: column
+    justify-content: space-between
+
+    .col-5
+      width: 100%
+
+    .col-6
+      width: 100%
+      display: flex
+      flex-direction: column
+
+  &__img
+    width: 100%
+    padding: 0 20px
+
+  &__title
+    margin-top: 60px
+    padding-left: 25px
+    font-family: 'Source Sans Pro', Arial, Helvetica, sans-serif
+    font-size: 2.5rem
+    font-weight: 700
+    text-transform: uppercase
+    letter-spacing: 0.3rem
+    color: $grey
+    border-left: 5px solid $accent
+
+  &__text
+    padding-top: 40px
+    font-family: 'Source Sans Pro', Arial, Helvetica, sans-serif
+    line-height: 2rem
+    color: $light-grey
+
+  &__btn
+    align-self: center
+    width: 225px
+    margin-top: 43px
+    padding: 17px
+
+  @media (min-width: 1000px)
+    padding: 140px 0
+    
+    .row
+      flex-direction: row
+
+      .col-5
+        width: 41.666666667%
+
+      .col-6
+       width: 50%
+
+    &__img
+      padding: 0
+
+    &__title
+      margin-top: 0
+
+    &__btn
+      align-self: flex-start
+
+
+// pricing
+
+.pricing
+  padding: 150px 0
+  text-align: center
+
+  &__title
+    font-family: 'Source Sans Pro', Arial, Helvetica, sans-serif
+    font-size: 2.5rem
+    font-weight: 700
+    text-transform: uppercase
+    letter-spacing: 0.3rem
+    color: $grey
+
+  &__promo
+    padding: 25px 0
+    color: $light-grey
+    
+  .separator
+    margin-bottom: 70px
+    background: url('../img/separator-dark.png') center center no-repeat
+
+  &__items
+    display: flex
+    // flex-direction: column
+    flex-flow: row wrap
+    justify-content: space-around
+
+    @media (min-width: 1000px)
+      justify-content: space-between
+
+.item
+  flex-grow: 1
+  max-width: 380px
+  // margin-right: 15px
+  color: $light-grey
+  background: $lightest-grey
+
+  &:last-child
+    margin-right: 0
+
+  &__header
+    background: $light-grey
+    
+    &--selected
+      background: $accent
+
+  &__title
+    padding: 47px 0 132px 0
+    font-size: 1.7rem
+    font-weight: 600
+    text-transform: uppercase
+    letter-spacing: 0.2rem
+    color: $white
+
+  &__price
+    position: relative
+    z-index: 1
+    display: flex
+    flex-direction: column
+    justify-content: center
+    align-items: center
+    width: 150px
+    height: 150px
+    margin:
+      top: -75px
+      left: auto
+      right: auto
+    font-size: 1.5rem
+    color: $light-grey
+    background-color: $white
+    border-radius: 50%
+    box-shadow: 0px 0px 0px 10px rgba(255,255,255,.2)
+
+    span 
+      &:first-child
+        font-family: 'Source Sans Pro', Arial, Helvetica, sans-serif
+        font-size: 2.7rem
+        font-weight: 700
+
+      &:last-child
+        padding-top: 8px
+        font-size: .8rem
+
+    &--selected
+      span 
+        &:first-child
+          color: $accent
+
+  &__features
+    margin: 35px 0
+    font-weight: 600
+
+    li 
+      padding: 14px 0
+
+  &__btn
+    margin-bottom: 50px
+    font-size: .8rem
+    font-weight: 600
+
+  &--selected
+    background: $accent
+
+
+
+// .who-we-are
+//   > .row
+//     display: flex
+//     flex-flow: row wrap
+//     justify-content: space-around
+//     padding: 20px 0
+  
+//     @media (min-width: 1000px)
+//       justify-content: space-between
+//       padding: 100px 0  
+
+// .feature
+//   display: flex
+//   flex-direction: column
+//   justify-content: space-between
+//   align-items: center
+//   max-width: 250px
+//   padding: 40px 0
+
+    // @media (min-width: 1000px)
+    // padding: 0
+
+
