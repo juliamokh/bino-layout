@@ -1,0 +1,73 @@
+.about-us
+  padding: 80px 0
+  background: $lightest-grey
+
+  > .row 
+    display: flex
+    flex-direction: column
+    justify-content: space-between
+
+  .left-col
+    width: 100%
+    display: flex
+    flex-direction: column
+    align-items: center
+
+  .right-col
+    width: 100%
+    display: flex
+    flex-direction: column
+
+  &__img
+    width: 300px
+    padding: 0 20px
+
+  &__title
+    margin-top: 60px
+    padding-left: 25px
+    font-family: $source-sans-pro
+    font-size: 2.5rem
+    font-weight: 700
+    text-transform: uppercase
+    letter-spacing: 0.3rem
+    color: $grey
+    border-left: 5px solid $accent
+
+  &__text
+    padding-top: 40px
+    font-family: $source-sans-pro
+    line-height: 2rem
+    color: $light-grey
+
+  &__btn
+    align-self: center
+    width: 225px
+    margin-top: 43px
+    padding: 17px
+
+  @media (min-width: 1000px)
+    padding: 140px 0
+    
+    .row
+      flex-direction: row
+
+      .left-col
+        @include width(5)
+
+      .right-col
+        @include width(6)
+
+    &__img
+      width: 100%
+      max-width: 550px
+      padding: 0
+
+    &__title
+      margin-top: 0
+
+    &__btn
+      align-self: flex-start
+
+  @media (min-width: 1200px)
+    &__img
+      height: 100%

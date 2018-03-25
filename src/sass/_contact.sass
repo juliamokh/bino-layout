@@ -1,0 +1,135 @@
+.contact
+  padding: 70px 0
+  background: $darker-grey
+
+  &__title
+    font-family: $source-sans-pro
+    font-size: 2.5rem
+    font-weight: 700
+    text-align: center
+    text-transform: uppercase
+    color: $white
+
+  &__text
+    padding: 25px 0
+    font-family: $open-sans
+    text-align: center
+    line-height: 1.4rem
+    color: $white
+    
+  &__main
+    margin-top: 60px
+    display: flex
+    flex-direction: column
+    justify-content: space-between
+
+  &__address
+    padding: 45px 40px
+    background: $white
+
+    &__title
+      margin-bottom: 20px
+      font-family: $source-sans-pro
+      font-size: 1.6rem
+      font-weight: 600
+      text-transform: uppercase
+      letter-spacing: .05rem
+      color: $accent
+
+    &__info
+      margin-bottom: 65px
+      font-family: $open-sans
+      font-size: 1.2rem
+      line-height: 1.7rem
+      color: $light-grey
+
+      a:hover,
+      a:focus,
+        text-decoration: underline
+
+    &__section:last-child
+      .contact__address__info
+          margin-bottom: 0
+
+  &__form
+    margin-top: 30px
+    padding: 45px 40px
+    display: flex
+    flex-direction: column
+    background: $white
+
+    &__group
+      position: relative
+      margin-bottom: 20px
+
+    label
+      position: absolute
+      top: 10px
+      font-family: $open-sans
+      font-size: 1rem
+      font-weight: 600
+      color: $light-grey
+      transition: .3s ease all
+
+    input,
+    textarea
+      width: 100%
+      padding: 10px 0
+      font-family: $open-sans
+      font-size: 1rem
+      font-weight: 600
+      color: $light-grey
+      background: none
+      border: none
+      border-bottom: 1px solid $light-grey
+
+      &:focus
+        color: $accent
+        outline: none
+        border-bottom: 2px solid $accent
+
+        ~ label
+          top: -14px
+          font-size: .9rem
+          color: $accent
+
+      &:valid
+        color: $green
+        border-bottom: 1px solid $green
+
+        ~ label
+          top: -14px
+          font-size: .9rem
+          color: $green
+
+    textarea
+      resize: none
+
+    &__btn
+      width: 150px
+      margin-top: 10px
+
+  @media (min-width: 1000px)
+    padding: 
+      top: 145px
+      bottom: 140px
+      
+    &__main
+      flex-direction: row
+
+    &__address
+      @include width(5)
+      margin-right: 30px
+
+    &__form
+      @include width(7)
+      margin-top: 0
+
+  @media (min-width: 1200px)
+    padding: 
+      top: 145px
+      bottom: 150px
+
+    &__address,
+    &__form
+      padding: 90px

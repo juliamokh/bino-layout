@@ -1,0 +1,70 @@
+.who-we-are
+  > .row
+    display: flex
+    flex-flow: row wrap
+    justify-content: space-around
+    padding: 20px 0
+  
+    @media (min-width: 1200px)
+      justify-content: space-between
+      padding: 100px 0
+
+
+.feature
+  display: flex
+  flex-direction: column
+  justify-content: space-between
+  align-items: center
+  max-width: 250px
+  padding: 40px 0
+
+  &__icon
+    display: flex
+    justify-content: center
+    align-items: center
+    width: 70px
+    height: 70px
+    font-size: 1.5rem
+    color: $accent
+    border: 1px solid $light-grey
+    border-radius: 3px
+
+  &__title
+    margin-top: 30px
+    font-family: $open-sans
+    font-size: 1.4rem
+    letter-spacing: 0.1rem
+    font-weight: 600
+    text-transform: uppercase
+    color: $grey
+
+  &__separator
+    width: 40px
+    margin: 15px 0
+
+  &__text
+    line-height: 1.5rem
+    text-align: center
+    font-size: .9rem
+    font-family: $source-sans-pro
+    font-weight: 300
+    color: $grey
+
+  &:hover,
+  &:focus
+    .feature
+      &__icon
+        border: 1px solid $accent
+        transform: rotate(45deg)
+        transition: transform 0.3s
+
+        > img,
+        > div
+          transform: rotate(-45deg)
+          transition: transform 0.3s
+
+      &__title
+        color: $accent
+
+  @media (min-width: 1200px)
+    padding: 0

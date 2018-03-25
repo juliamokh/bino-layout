@@ -1,0 +1,102 @@
+.pricing
+  padding: 70px 0
+  text-align: center
+
+  &__title
+    font-family: $source-sans-pro
+    font-size: 2.5rem
+    font-weight: 700
+    text-transform: uppercase
+    letter-spacing: 0.3rem
+    color: $grey
+
+  &__promo
+    padding: 25px 0
+    font-family: $open-sans
+    line-height: 1.4rem
+    color: $light-grey
+    
+  &__items
+    display: flex
+    flex-flow: row wrap
+    justify-content: space-around
+
+  @media (min-width: 1200px)
+    padding: 
+      top: 160px
+      bottom: 130px
+
+    &__items
+      justify-content: space-between
+  
+
+.item
+  flex-grow: 1
+  min-width: 280px
+  max-width: 380px
+  margin: 
+    right: 10px
+    left: 10px
+    bottom: 10px
+  color: $light-grey
+  background: $lightest-grey
+
+  &__header
+    font-family: $open-sans
+    background: $light-grey
+
+  &__title
+    padding: 47px 0 132px 0
+    font-size: 1.7rem
+    font-weight: 600
+    text-transform: uppercase
+    letter-spacing: 0.2rem
+    color: $white
+
+  &__price
+    position: relative
+    z-index: 1
+    display: flex
+    flex-direction: column
+    justify-content: center
+    align-items: center
+    width: 150px
+    height: 150px
+    margin:
+      top: -75px
+      left: auto
+      right: auto
+    font-family: $source-sans-pro
+    color: $light-grey
+    background-color: $white
+    border-radius: 50%
+    box-shadow: 0px 0px 0px 10px rgba(255,255,255,.2)
+
+    span 
+      &:first-child
+        font-size: 2.7rem
+        font-weight: 700
+
+      &:last-child
+        padding-top: 8px
+        font-size: .9rem
+
+  &__features
+    margin: 35px 0
+    font-family: $open-sans
+    font-weight: 600
+
+    li 
+      padding: 14px 0
+
+  &__btn
+    margin-bottom: 50px
+
+  &--selected .item
+    &__header
+      background: $accent
+
+    &__price
+      span 
+        &:first-child
+          color: $accent

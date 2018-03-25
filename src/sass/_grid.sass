@@ -6,71 +6,8 @@
   @media (min-width: 550px)
     width: 80%
 
-.col-1
-  width: 8.3333333333%
+@mixin width($col)
+  width: $col * 8.3333333333%
 
-.col-2
-  width: 16.666666667%
-
-.col-3
-  width: 25%
-
-.col-4
-  width: 33.333333333%
-
-.col-5
-  width: 41.666666667%
-
-.col-6
-  width: 50%
-
-.col-7
-  width: 58.333333333%
-
-.col-8
-  width: 16.666666667%
-
-.col-9
-  width: 75%
-
-.col-10
-  width: 83.333333333%
-
-.col-11
-  width: 91.666666667%
-
-.col-12
-  width: 100%
-
-.indent-col-1
-  margin-left: 8.3333333333%
-
-.indent-col-2
-  margin-left: 16.666666667%
-
-.indent-col-3
-  margin-left: 25%
-
-.indent-col-4
-  margin-left: 33.333333333%
-
-.indent-col-5
-  margin-left: 41.666666667%
-
-.indent-col-6
-  margin-left: 50%
-
-.indent-col-7
-  margin-left: 58.333333333%
-
-.indent-col-8
-  margin-left: 16.666666667%
-
-.indent-col-9
-  margin-left: 75%
-
-.indent-col-10
-  margin-left: 83.333333333%
-
-.indent-col-11
-  margin-left: 91.666666667%
+@mixin indent($col)
+  margin-left: $col 8.3333333333%
